@@ -26,12 +26,12 @@ class MyUnitTests (TestCase) :
     def test_1 (self) :
         for f in self.a :
             with self.subTest() :
-                self.assertEqual(f(add, [], 0), 0)
+                self.assertEqual(f(add, [],        0),  0)
 
     def test_2 (self) :
         for f in self.a :
             with self.subTest() :
-                self.assertEqual(f(add, [2, 3, 4], 0), 9)
+                self.assertEqual(f(add, [2, 3, 4], 0),  9)
 
     def test_3 (self) :
         for f in self.a :
