@@ -37,7 +37,6 @@ pull:
     --include "Sequences.py"                \
     --include "Lists.py"                    \
     --include "Strings.py"                  \
-    --include "RegExps.py"                  \
     --include "Sets.py"                     \
     --include "Dicts.py"                    \
     --include "FunctionKeywords.py"         \
