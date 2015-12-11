@@ -18,12 +18,12 @@ def f () :
     v2 = 12 # local
 
     try :
-        assert v3 == 3                                                              # local
+        assert v3 == 3 # so this will complain, as v3 is not set yet                # local
         assert False
     except UnboundLocalError as e :
         assert len(e.args) == 1
         assert e.args      == ("local variable 'v3' referenced before assignment",)
-    v3 = 13                                                                         # local
+    v3 = 13  # this will make this a local variable                                 # local
 
     try :
         v4 += 14                                                                    # local
