@@ -26,7 +26,7 @@ assert set(a)  == {2, 3.45, "abc"}  # ?
 
 a = list({2 : "ghi", 3.45 : 3, "abc" : 6.78})
 assert type(a) is list
-assert set(a)  == {2, 3.45, "abc"}             # ?
+assert set(a)  == {2, 3.45, "abc"}             # need to build a new set, as the order cannot be determine
 
 a = tuple({2, 3.45, "abc"})
 assert type(a) is tuple
@@ -36,9 +36,9 @@ a = tuple({2 : "ghi", 3.45 : 3, "abc" : 6.78})
 assert type(a) is tuple
 assert set(a) == {2, 3.45, "abc"}              # ?
 
-assert [] is not []
-assert [] ==     []
-assert () is     ()
+assert [] is not [] # two empty list has different addresses 
+assert [] ==     [] # two empty list has same content, both empty, but addresses are different
+assert () is     () # as tuple is immutable, so only one empty tuple in python world
 
 a = []
 a.append(2)
