@@ -34,8 +34,8 @@ assert list(y) == [10, 15, 20] # list(y) is the list constructor, which will ite
 assert list(y) == []
 
 x = [2, 3, 4]
-y = map(lambda v : v * 5, x)
-assert type(y) is map
+y = map(lambda v : v * 5, x) #map function input parameter: (1) urinay function and (2) iterate-able container
+assert type(y) is map #like generator
 assert hasattr(y, "__next__")
 assert hasattr(y, "__iter__")
 assert x       == [2,   3,  4]
@@ -43,7 +43,7 @@ assert list(y) == [10, 15, 20]
 assert list(y) == []
 
 x = [2, 3, 4]
-y = (v * 5 for v in x)
+y = (v * 5 for v in x) # does not do the *5 yet, do that until asking the values
 x += [5]
 assert x       == [ 2,  3,  4,  5]
 assert list(y) == [10, 15, 20, 25]
@@ -52,7 +52,7 @@ x += [5]
 assert list(y) == []
 
 x = [2, 3, 4]
-y = map(lambda v : v * 5, x)
+y = map(lambda v : v * 5, x) # create a generator 
 x += [5]
 assert x       == [2,   3,  4,  5]
 assert list(y) == [10, 15, 20, 25]
