@@ -30,7 +30,7 @@ assert type(y) is GeneratorType
 assert hasattr(y, "__next__")
 assert hasattr(y, "__iter__")
 assert x       == [2,   3,  4]
-assert list(y) == [10, 15, 20]
+assert list(y) == [10, 15, 20] # list(y) is the list constructor, which will iterate y and get the values and then put in a list
 assert list(y) == []
 
 x = [2, 3, 4]
