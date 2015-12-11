@@ -14,6 +14,7 @@ def add (x, y) :
 assert add(2, 3)                 == 5
 assert reduce(add, [2, 3, 4], 0) == 9
 
+# lambda, only one expression
 assert (lambda x, y : x + y)(2, 3)               == 5
 assert reduce(lambda x, y : x + y, [2, 3, 4], 0) == 9
 
