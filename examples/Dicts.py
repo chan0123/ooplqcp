@@ -32,7 +32,7 @@ assert d       ==     {2 : "def", "abc" : 6.78, 3.45 : 3}
 
 d = {}
 try :
-    assert d[2] == None
+    assert d[2] == None # looking at the value for key 2
     assert False
 except KeyError as e:
     assert type(e.args) is tuple
@@ -54,7 +54,7 @@ except KeyError as e:
     assert len(e.args)  == 1
     assert e.args       == ("abc",)
 
-d = {2 : "abc", 3 : "def", 4 : "ghi"}
+d = {2 : "abc", 3 : "def", 4 : "ghi"} # mutable, such as dict, list cannot be keys, even frozenset, tuple can be keys
 k = d.keys()
 assert set(k) == {2, 3, 4}
 d.pop(3)
