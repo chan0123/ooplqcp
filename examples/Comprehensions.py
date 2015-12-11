@@ -80,7 +80,7 @@ assert list(y) == [    15,     25]
 assert list(y) == []
 
 x = [2, 3, 4, 5, 6]
-y = filter(lambda v : v % 2, x)
+y = filter(lambda v : v % 2, x) # first create a filter on odd subset
 assert type(y) is filter
 assert hasattr(y, "__next__")
 assert hasattr(y, "__iter__")
@@ -108,16 +108,16 @@ assert z == [2+4, 2+5, 3+4, 3+5, 4+4, 4+5]
 
 x = [2, 3, 4]
 y = [4, 5]
-z = (v + w for v in x for w in y)
+z = (v + w for v in x for w in y) # get a generator
 assert x       == [2, 3, 4]
 assert y       == [4, 5]
 assert list(z) == [2+4, 2+5, 3+4, 3+5, 4+4, 4+5]
 assert list(z) == []
 
 x = {2, 3, 4}
-y = set()
+y = set() # build a empty set
 for v in x :
-    y |= {v * 5}
+    y |= {v * 5} # set union
 assert x == { 2,  3,  4}
 assert y == {10, 15, 20}
 
