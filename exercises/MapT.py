@@ -39,8 +39,8 @@ class MyUnitTests (TestCase) :
     def test_3 (self) :
         for f in self.a :
             with self.subTest() :
-                x = f(lambda x : x ** 2, [2, 3])
-                self.assertEqual(list(x), [4, 9])
+                x = f(lambda x : x ** 3, [2, 3])
+                self.assertEqual(list(x), [8, 27])
                 self.assertEqual(list(x), [])
 
     def test_4 (self) :
