@@ -142,25 +142,27 @@ assert x == {2 : "abc", 3 : "def", 4 : "ghi"}
 assert y == {2 : "abcxyz", 3 : "defxyz", 4 : "ghixyz"}
 
 a = [2, 3, 4]
-r = reversed(a)
+r = reversed(a) # generator which can iterate 
 assert list(r) == [4, 3, 2]
-assert list(r) == []
+assert list(r) == [] # generator exhust and will give an empty list
 
 a = ["abc", "def", "ghi"]
-e = enumerate(a)
+e = enumerate(a) # generator of tuple
 assert list(e) == [(0, "abc"), (1, "def"), (2, "ghi")]
 assert list(e) == []
 
 a = [2, 3, 4]
 b = [5, 6, 7]
-z = zip(a, b)
+z = zip(a, b) # matrix transpost
 assert list(z) == [(2, 5), (3, 6), (4, 7)]
 assert list(z) == []
 
 a = [4, 2, 3]
-s = sorted(a)
-assert list(s) == [2, 3, 4]
-assert list(s) == [2, 3, 4]
+s = sorted(a) # not a generator, so it is not exhust, 
+assert s == [2, 3, 4]
+assert s == [2, 3, 4]
+assert a == [2, 3, 4] # will modify a also? 
+
 
 assert     all([True,  2, 3.45, "abc", [2, 3, 4], (2, 3, 4), {2, 3, 4}, {2 : "abc", 3 : "def", 4 : "ghi"}])
 assert not any([False, 0, 0.0,  "",    [],        (),        set(),     dict()])
