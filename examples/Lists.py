@@ -67,10 +67,10 @@ except IndexError as e:
 
 a = []
 a.extend([2, 3])                    # +=
-a.extend((4, 5))
+a.extend((4, 5))                    # any iterable will work
 a.extend({6, 7})
 assert set(a) == {2, 3, 4, 5, 6, 7}
-a.remove(4)
+a.remove(4) # remove item with content 4
 assert set(a) == {2, 3, 5, 6, 7}
 try :
     a.remove(4)
@@ -92,15 +92,15 @@ except IndexError as e:
     assert e.args       == ('list assignment index out of range',)
 
 a = [2, 3, 4];
-b = list(a)
+b = list(a) # create a new list b with content a
 assert a is not b
 assert a ==     b
 
 a = (2, 3, 4)
-b = tuple(a)
-assert a is b
+b = tuple(a) # tuple is immutable, so only one is created
+assert a is b # same addresses
 
-a = 2 * [[2, 3, 4]]
+a = 2 * [[2, 3, 4]] # have two copies of the addresses, modify one of them will change both
 assert a    is not [[2, 3, 4], [2, 3, 4]]
 assert a    ==     [[2, 3, 4], [2, 3, 4]]
 assert a[0] is     a[1]
@@ -112,10 +112,10 @@ assert a[0] is     a[1]
 a = [[2, 3, 4] for v in range(2)]
 assert a    is not [[2, 3, 4], [2, 3, 4]]
 assert a    ==     [[2, 3, 4], [2, 3, 4]]
-assert a[0] is not a[1]
+assert a[0] is not a[1] # the second part is not the same, it is a new one, so addresses are different
 
 a = [2, 3, 4]
-b = (a,)
+b = (a,) # put the address of the list into the tuple
 assert b is not ([2, 3, 4],)
 assert b ==     ([2, 3, 4],)
 assert a is     b[0]
