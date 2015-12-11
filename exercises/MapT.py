@@ -26,22 +26,29 @@ class MyUnitTests (TestCase) :
     def test_1 (self) :
         for f in self.a :
             with self.subTest() :
-                self.assertEqual(list(f(lambda x : x ** 2, ())), [])
+                x = f(lambda x : x ** 2, [])
+                self.assertEqual(list(x), [])
 
     def test_2 (self) :
         for f in self.a :
             with self.subTest() :
-                self.assertEqual(list(f(lambda x : x ** 2, (2,))), [4])
+                x = f(lambda x : x ** 2, [2])
+                self.assertEqual(list(x), [4])
+                self.assertEqual(list(x), [])
 
     def test_3 (self) :
         for f in self.a :
             with self.subTest() :
-                self.assertEqual(list(f(lambda x : x ** 2, (2, 3))), [4, 9])
+                x = f(lambda x : x ** 3, [2, 3])
+                self.assertEqual(list(x), [8, 27])
+                self.assertEqual(list(x), [])
 
     def test_4 (self) :
         for f in self.a :
             with self.subTest() :
-                self.assertEqual(list(f(lambda x : x ** 2, (2, 3, 4))), [4, 9, 16])
+                x = f(lambda x : x ** 2, [2, 3, 4])
+                self.assertEqual(list(x), [4, 9, 16])
+                self.assertEqual(list(x), [])
 
 if __name__ == "__main__" :
     main()

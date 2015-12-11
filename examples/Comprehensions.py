@@ -138,7 +138,7 @@ y = {k : v + "xyz" for k, v in x.items()}              # dict comprehension
 assert type(y) is dict
 assert not hasattr(y, "__next__")
 assert     hasattr(y, "__iter__")
-assert x == {2 : "abc", 3 : "def", 4 : "ghi"}
+assert x == {2 : "abc",    3 : "def",    4 : "ghi"}
 assert y == {2 : "abcxyz", 3 : "defxyz", 4 : "ghixyz"}
 
 a = [2, 3, 4]
@@ -158,11 +158,9 @@ assert list(z) == [(2, 5), (3, 6), (4, 7)]
 assert list(z) == []
 
 a = [4, 2, 3]
-s = sorted(a) # not a generator, so it is not exhust, 
-assert s == [2, 3, 4]
-assert s == [2, 3, 4]
-assert a == [2, 3, 4] # will modify a also? 
-
+s = sorted(a)
+assert a == [4, 2, 3] # the original list does not change
+assert s == [2, 3, 4] # return a list, but not a iterator
 
 assert     all([True,  2, 3.45, "abc", [2, 3, 4], (2, 3, 4), {2, 3, 4}, {2 : "abc", 3 : "def", 4 : "ghi"}])
 assert not any([False, 0, 0.0,  "",    [],        (),        set(),     dict()])
