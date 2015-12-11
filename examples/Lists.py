@@ -8,8 +8,8 @@ print("Lists.py")
 
 a = [2, 3, "abc"]
 assert type(a) ==     list
-assert a       is not [2, 3, 'abc']
-assert a       ==     [2, 3, 'abc']
+assert a       is not [2, 3, 'abc'] # compare the address
+assert a       ==     [2, 3, 'abc'] # compare the content
 assert a       !=     [3, 2, 'abc']
 assert a       !=     (2, 3, 'abc')
 
