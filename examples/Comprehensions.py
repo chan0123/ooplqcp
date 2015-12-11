@@ -10,6 +10,7 @@ print("Comprehensions.py")
 
 x = [2, 3, 4]
 y = []
+# z = x * 2 will become [2,3,4,2,3,4] (repeat the list)
 for v in x :
     y += [v * 5]
 assert x == [ 2,  3,  4]
