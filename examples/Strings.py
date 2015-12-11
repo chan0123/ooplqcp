@@ -12,11 +12,11 @@ assert len('abc')  == 3
 assert type("abc") is str
 assert len("abc")  == 3
 
-assert type(r'abc') is str
+assert type(r'abc') is str # r mean raw
 assert len(r'abc')  == 3
 
-assert type(r"abc") is str
-assert len(r"abc")  == 3
+assert type(r"abc") is str 
+assert len(r"abc")  == 3 
 
 assert type('''abc''') is str
 assert len('''abc''')  == 3
