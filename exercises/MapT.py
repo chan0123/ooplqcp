@@ -11,8 +11,7 @@ from unittest import main, TestCase
 from Map import    \
     map_range_for, \
     map_for,       \
-    map_while_1,   \
-    map_while_2,   \
+    map_while,     \
     map_generator
 
 class MyUnitTests (TestCase) :
@@ -20,8 +19,7 @@ class MyUnitTests (TestCase) :
         self.a = [
             map_range_for,
             map_for,
-            map_while_1,
-            map_while_2,
+            map_while,
             map_generator,
             map]
 

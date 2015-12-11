@@ -83,7 +83,7 @@ i = 5.0
 j = 2
 i //= j
 assert type(i) is float
-assert str(i ) == "2.0"
+assert str(i)  == "2.0"
 assert j == 2
 
 i = 12

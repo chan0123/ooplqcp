@@ -26,9 +26,25 @@ pull:
     --include "Operators.py"                \
     --include "Variables.py"                \
     --include "Iteration.py"                \
+    --include "Yield.py"                    \
+    --include "Lambda.py"                   \
     --include "Comprehensions.py"           \
     --include "Iterables.py"                \
-    --include "Lambdas.py"                  \
+    --include "GlobalVariables.py"          \
+    --include "ClassVariables.py"           \
+    --include "InstanceVariables.py"        \
+    --include "Methods.py"                  \
+    --include "Sequences.py"                \
+    --include "Lists.py"                    \
+    --include "Strings.py"                  \
+    --include "RegExps.py"                  \
+    --include "Sets.py"                     \
+    --include "Dicts.py"                    \
+    --include "FunctionKeywords.py"         \
+    --include "FunctionDefaults.py"         \
+    --include "FunctionUnpacking.py"        \
+    --include "FunctionTuple.py"            \
+    --include "FunctionDict.py"             \
     --exclude "*"                           \
     ../../../examples/python/ examples
 	@rsync -r -t -u -v --delete             \
@@ -41,29 +57,11 @@ pull:
     --include "Reduce.py"                   \
     --include "ReduceT.py"                  \
     --include "MapT.py"                     \
+    --include "RangeIteratorT.py"           \
+    --include "RangeT.py"                   \
+    --include "Reduce2T.py"                 \
     --exclude "*"                           \
     ../../../exercises/python/ exercises
-
-#    --include "FunctionKeywords.py"         \
-#    --include "FunctionDefaults.py"         \
-#    --include "FunctionUnpacking.py"        \
-#    --include "FunctionTuple.py"            \
-#    --include "FunctionDict.py"             \
-#    --include "Functions.py"                \
-#    --include "RegExps.py"                  \
-#    --include "GlobalVariables.py"          \
-#    --include "ClassVariables.py"           \
-#    --include "InstanceVariables.py"        \
-#    --include "Methods.py"                  \
-
-#    --include "Collatz.py"                  \
-#    --include "CollatzT.py"                 \
-#    --include "Collatz2.py"                 \
-#    --include "Collatz2T.py"                \
-#    --include "RangeIteratorT.py"           \
-#    --include "AllOfT.py"                   \
-#    --include "RangeT.py"                   \
-#    --include "DecoratorsT.py"              \
 
 push:
 	make clean

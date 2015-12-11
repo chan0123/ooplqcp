@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# ----------
-# ReduceT.py
-# ----------
+# -----------
+# Reduce2T.py
+# -----------
 
 # https://docs.python.org/3.4/library/functools.html
 
@@ -10,17 +10,15 @@ from functools import reduce
 from operator  import add, sub
 from unittest  import main, TestCase
 
-from Reduce import    \
-    reduce_for_range, \
-    reduce_for,       \
-    reduce_while
+from Reduce2 import \
+    reduce_while,   \
+    reduce_for
 
 class MyUnitTests (TestCase) :
     def setUp (self) :
         self.a = [
-            reduce_for_range,
-            reduce_for,
             reduce_while,
+            reduce_for,
             reduce]
 
     def test_1 (self) :
@@ -43,14 +41,20 @@ class MyUnitTests (TestCase) :
             with self.subTest() :
                 self.assertEqual(f(sub, [2, 3, 4], 1), -8)
 
+    def test_5 (self) :
+        for f in self.a :
+            with self.subTest() :
+                self.assertEqual(f(sub, [2]),           2)
+
+    def test_6 (self) :
+        for f in self.a :
+            with self.subTest() :
+                self.assertEqual(f(sub, [2, 3]),       -1)
+
+    def test_7 (self) :
+        for f in self.a :
+            with self.subTest() :
+                self.assertRaises(TypeError, f, sub, [], msg = "reduce() of empty sequence with no initial value")
+
 if __name__ == "__main__" :
     main()
-
-"""
-% ReduceT
-....
-----------------------------------------------------------------------
-Ran 4 tests in 0.000s
-
-OK
-"""

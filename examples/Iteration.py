@@ -8,7 +8,7 @@ from itertools import count
 
 print("Iteration.py")
 
-a = [2, 3, 4]
+a = [2, 3, 4]                     # list
 assert type(a) is list
 assert not hasattr(a, "__next__")
 assert     hasattr(a, "__iter__")
@@ -17,7 +17,7 @@ for v in a :
     s += v
 assert s == 9
 
-a = (2, 3, 4)
+a = (2, 3, 4)                     # tuple
 assert type(a) is tuple
 assert not hasattr(a, "__next__")
 assert     hasattr(a, "__iter__")
@@ -64,7 +64,7 @@ for u, v in a :
     s += u
 assert s == 9
 
-a = {2, 3, 4}
+a = {2, 3, 4}                     # set
 assert type(a) is set
 assert not hasattr(a, "__next__")
 assert     hasattr(a, "__iter__")
@@ -73,12 +73,12 @@ for v in a :                      # order not guaranteed
     s += v
 assert s == 9
 
-d = {2 : "abc", 3 : "def", 4 : "ghi"}
+d = {2 : "abc", 3 : "def", 4 : "ghi"} # dict
 assert type(d) is dict
 assert not hasattr(d, "__next__")
 assert     hasattr(d, "__iter__")
 s = 0
-for k in d :                           # order not guaranteed
+for k in d :                          # order not guaranteed
     s += k
 assert s == 9
 
