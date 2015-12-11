@@ -137,7 +137,7 @@ y = {k : v + "xyz" for k, v in x.items()}              # dict comprehension
 assert type(y) is dict
 assert not hasattr(y, "__next__")
 assert     hasattr(y, "__iter__")
-assert x == {2 : "abc", 3 : "def", 4 : "ghi"}
+assert x == {2 : "abc",    3 : "def",    4 : "ghi"}
 assert y == {2 : "abcxyz", 3 : "defxyz", 4 : "ghixyz"}
 
 a = [2, 3, 4]
@@ -158,8 +158,8 @@ assert list(z) == []
 
 a = [4, 2, 3]
 s = sorted(a)
-assert list(s) == [2, 3, 4]
-assert list(s) == [2, 3, 4]
+assert a == [4, 2, 3]
+assert s == [2, 3, 4]
 
 assert     all([True,  2, 3.45, "abc", [2, 3, 4], (2, 3, 4), {2, 3, 4}, {2 : "abc", 3 : "def", 4 : "ghi"}])
 assert not any([False, 0, 0.0,  "",    [],        (),        set(),     dict()])
