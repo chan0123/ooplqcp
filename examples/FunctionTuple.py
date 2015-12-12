@@ -6,8 +6,8 @@
 
 print("FunctionTuple.py")
 
-def f (x, y, *z) :
-    return [x, y, z]
+def f (x, y, *z) : # collect as many arguments after x and y become a tuple
+    return [x, y, z] # can only have one * argument and should put that at last
 
 assert f(2, 3)       == [2, 3, ()]
 assert f(2, 3, 4)    == [2, 3, (4,)]
