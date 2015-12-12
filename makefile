@@ -61,6 +61,7 @@ pull:
     --include "RangeIteratorT.py"           \
     --include "Range.py"                    \
     --include "RangeT.py"                   \
+    --include "Reduce2.py"                  \
     --include "Reduce2T.py"                 \
     --exclude "*"                           \
     ../../../exercises/python/ exercises
