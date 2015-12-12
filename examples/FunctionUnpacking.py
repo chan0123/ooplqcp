@@ -16,12 +16,12 @@ assert t            == (3, 4)
 assert t            != (4, 3)
 assert f(2, t, 5)   == [2, (3, 4), 5]
 assert f(2, 5, t)   == [2, 5, (3, 4)]
-assert f(2, *t)     == [2, 3, 4]
+assert f(2, *t)     == [2, 3, 4] # unpacking tuple (3,4), it will break the iterable and then feed the function
 assert f(z = 2, *t) == [3, 4, 2]
 assert f(*t, z = 2) == [3, 4, 2]
 
 d1 = {"z" : 4, "y" : 3, "x" : 2}
-assert f(**d1) == [2, 3, 4]
+assert f(**d1) == [2, 3, 4] # ** is only for dictionary, key should match the names of the parameters of the functions
 
 d2 = {"z" : 4, "y" : 3}
 assert f(2,     **d2) == [2, 3, 4]
