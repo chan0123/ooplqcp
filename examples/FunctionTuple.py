@@ -15,7 +15,7 @@ assert f(2, 3, 4, 5) == [2, 3, (4, 5)]
 
 t = (3, 4)
 assert f(2, 5,  t)  == [2, 5, ((3, 4),)]
-assert f(2, 5, *t)  == [2, 5, (3, 4)]
+assert f(2, 5, *t)  == [2, 5, (3, 4)] # unpack the tuple and feed the fuction and function pack back the tuple
 assert f(2, *t)     == [2, 3, (4,)]
 assert f(*t)        == [3, 4, ()]
 
