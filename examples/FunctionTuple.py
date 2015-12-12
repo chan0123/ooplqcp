@@ -20,7 +20,7 @@ assert f(2, *t)     == [2, 3, (4,)]
 assert f(*t)        == [3, 4, ()]
 
 u = (2,)
-assert f(y = 3, *u) == [2, 3, ()]
+assert f(y = 3, *u) == [2, 3, ()] # cannot pass in z by name
 assert f(*u, y = 3) == [2, 3, ()]
 
 d1 = {"y" : 3, "x" : 2}
