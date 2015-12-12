@@ -117,11 +117,11 @@ assert s == {0, 1, 2}
 class A :
     pass
 
-s = {A(), A()}
+s = {A(), A()} # A() is hashable, so can put into a set
 assert len(s) == 2
 
 s = {"abc",             "def"}
 s = {(2, 3),            (4, 5)}
-s = {frozenset([2, 3]), frozenset([4, 5])}
+s = {frozenset([2, 3]), frozenset([4, 5])} # cannot put a list inside a set, as the list is mutable
 
 print("Done.")

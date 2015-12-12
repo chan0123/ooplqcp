@@ -5,7 +5,7 @@
 # ------------
 
 def test_1 (c) :
-    assert not c()
+    assert not c() # make sure the container is empty
 
     a = c("01234")
     assert len(a) == 5
@@ -99,7 +99,7 @@ def test_1 (c) :
     assert a[ 1: 4:-2] == c("")
 
     a = c("01234")
-    assert a[ :  :-1] == c("43210")
+    assert a[ :  :-1] == c("43210") # reverse a list easily
     assert a[4:-6:-1] == c("43210")
 
 def test_2 (c) :
